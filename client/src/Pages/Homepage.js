@@ -22,7 +22,7 @@ const Homepage = () => {
   //get all cat
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get("http://localhost:4321/api/v1/category/get-category");
+      const { data } = await axios.get("https://harsh-project.onrender.com/api/v1/category/get-category");
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -39,7 +39,7 @@ const Homepage = () => {
   const getAllProducts = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get(`http://localhost:4321/api/v1/product/product-list/${page}`);
+      const { data } = await axios.get(`https://harsh-project.onrender.com/api/v1/product/product-list/${page}`);
       setLoading(false);
       setProducts(data.products);
     } catch (error) {
@@ -51,7 +51,7 @@ const Homepage = () => {
   //getTOtal COunt
   const getTotal = async () => {
     try {
-      const { data } = await axios.get("http://localhost:4321/api/v1/product/product-count");
+      const { data } = await axios.get("https://harsh-project.onrender.com/api/v1/product/product-count");
       setTotal(data?.total);
     } catch (error) {
       console.log(error);
@@ -66,7 +66,7 @@ const Homepage = () => {
   const loadMore = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get(`http://localhost:4321/api/v1/product/product-list/${page}`);
+      const { data } = await axios.get(`https://harsh-project.onrender.com/api/v1/product/product-list/${page}`);
       setLoading(false);
       setProducts([...products, ...data?.products]);
     } catch (error) {
@@ -96,7 +96,7 @@ const Homepage = () => {
   //get filterd product
   const filterProduct = async () => {
     try {
-      const { data } = await axios.post("http://localhost:4321/api/v1/product/product-filters", {
+      const { data } = await axios.post("https://harsh-project.onrender.com/api/v1/product/product-filters", {
         checked,
         radio,
       });
@@ -146,7 +146,7 @@ const Homepage = () => {
             {products?.map((p) => (
               <div className="card m-2" style={{ width: "18rem" }} key={p._id}>
                 <img
-                  src={`http://localhost:4321/api/v1/product/product-photo/${p._id}`}
+                  src={`https://harsh-project.onrender.com/api/v1/product/product-photo/${p._id}`}
                   className="card-img-top"
                   alt={p.name}
                 />

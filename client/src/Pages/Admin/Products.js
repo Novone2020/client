@@ -10,7 +10,7 @@ const Products = () => {
     //getall products
     const getAllProducts = async () => {
         try {
-            const { data } = await axios.get("http://localhost:4321/api/v1/product/get-product");
+            const { data } = await axios.get("https://harsh-project.onrender.com/api/v1/product/get-product");
             setProducts(data.products);
         } catch (error) {
             console.log(error);
@@ -39,7 +39,7 @@ const Products = () => {
                             >
                                 <div className="card m-2" style={{ width: "18rem" }}>
                                     <img
-                                        src={`http://localhost:4321/api/v1/product/product-photo/${p._id}`}
+                                        src={`https://harsh-project.onrender.com/api/v1/product/product-photo/${p._id}`}
                                         className="card-img-top"
                                         alt={p.name}
                                     />

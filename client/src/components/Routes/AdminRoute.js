@@ -11,7 +11,7 @@ export default function AdminRoute() {
     useEffect(() => {
         const authCheck = async () => {
             
-            const res = await axios.get("http://localhost:4321/api/v1/auth/admin-auth");
+            const res = await axios.get("https://harsh-project.onrender.com/api/v1/auth/admin-auth");
             
             if (res.data.ok) {
                 setOk(true);
