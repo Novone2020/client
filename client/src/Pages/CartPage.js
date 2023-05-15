@@ -21,11 +21,12 @@ const CartPage = () => {
       let total = 0;
       cart?.map((item) => {
         total = total + item.price;
+        return total.toLocaleString("en-US", {
+          style: "currency",
+          currency: "USD",
+        });
       });
-      return total.toLocaleString("en-US", {
-        style: "currency",
-        currency: "USD",
-      });
+      
     } catch (error) {
       console.log(error);
     }
