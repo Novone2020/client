@@ -8,7 +8,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import "../styles/CartStyles.css";
 const CartPage = () => {
-  const [auth, setAuth] = useAuth();
+  const [auth, ] = useAuth();
   const [cart, setCart] = useCart();
   const [clientToken, setClientToken] = useState("");
   const [instance, setInstance] = useState("");
@@ -62,11 +62,11 @@ const CartPage = () => {
   const handlePayment = async () => {
     try {
       setLoading(true);
-      const { nonce } = await instance.requestPaymentMethod();
-      const { data } = await axios.post("https://harsh-project.onrender.com/api/v1/product/braintree/payment", {
-        nonce,
-        cart,
-      });
+      // const { nonce } = await instance.requestPaymentMethod();
+      // const { data } = await axios.post("https://harsh-project.onrender.com/api/v1/product/braintree/payment", {
+      //   nonce,
+      //   cart,
+      // });
       setLoading(false);
       localStorage.removeItem("cart");
       setCart([]);
